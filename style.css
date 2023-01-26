@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#mainbody {
+  display: flex;
+  overflow: scroll;
+}
+
+#leftside {
+  width: 40%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#leaves-container {
+  width: inherit;
+  height: inherit;
+}
+
+#rightside {
+  width: 60vw;
+  height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  background: black;
+  opacity: 0.4;
+  width: inherit;
+  height: 100%;
+}
+
+#leaves {
+  height: 100vh;
+}
+
+#text-container {
+  top: 50%;
+  width: 40%;
+  border: 0px solid red;
+  position: absolute;
+}
+
+.text {
+  font-family: "Aboreto", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  font-size: 5vw;
+
+  background-image: linear-gradient(135deg, #92f4e3, #0420a9);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
