@@ -107,7 +107,6 @@ form button {
   gap: 5vw;
   justify-content: space-evenly;
   background-color: rgba(0, 0, 0, 0.407);
-
   border-radius: 5px;
 }
 
@@ -150,7 +149,6 @@ fieldset {
 
 #page2 {
   min-height: 100vh;
-  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
