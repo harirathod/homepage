@@ -1,59 +1,69 @@
+@font-face {
+  font-family: "capitol";
+  src: url("https://use.typekit.net/af/d7186b/00000000000000007735b455/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/d7186b/00000000000000007735b455/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/d7186b/00000000000000007735b455/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+}
+
 * {
+  border: 0px solid red;
   padding: 0;
   margin: 0;
 }
 
-#mainbody {
-  display: flex;
-  overflow: scroll;
-}
-
-#leftside {
-  width: 40%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#leaves-container {
-  width: inherit;
-  height: inherit;
-}
-
-#rightside {
-  width: 60vw;
-  height: 100vh;
-}
-
-.overlay {
-  position: absolute;
-  background: black;
-  opacity: 0.4;
-  width: inherit;
-  height: 100%;
-}
-
-#leaves {
-  height: 100vh;
+#bkgrd-img {
+  position: fixed;
+  width: 2000px;
+  top: -400px;
+  left: -20px;
+  z-index: -1;
 }
 
 #text-container {
-  top: 50%;
-  width: 40%;
-  border: 0px solid red;
-  position: absolute;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.text {
-  font-family: "Aboreto", sans-serif;
-  font-weight: 800;
+#title {
+  font-family: "capitol", sans-serif;
+  font-weight: 600;
+  font-size: 60vmin;
+  line-height: 70vmin;
+  margin-top: 100px;
+  margin-bottom: -40px;
   text-align: center;
-  font-size: 5vw;
-
   background-image: linear-gradient(135deg, #92f4e3, #0420a9);
-  background-size: 100%;
-  background-repeat: repeat;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+img.down-arrow {
+  width: 36px;
+  background-color: #000000f7;
+  border-radius: 100px;
+  padding: 10px;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border-radius: 100px;
+    border: 0px solid red;
+}
+
+.form-container {
+    width: 100vw;
+    background-color: whitesmoke;
 }
