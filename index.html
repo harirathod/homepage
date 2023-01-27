@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,46 +9,57 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div id="mainbody">
         <img id="bkgrd-img" src="./imgs/glacier.jpeg">
         <div id="text-container">
             <div id="title">Glacier</div>
+            <div class="overlay"></div>
             <button><img class="down-arrow" src="./imgs/down-arro2.svg"></button>
         </div>
-        <div class="form-container">
-            <form method="post" action="[example]">
-                <fieldset>
-                    <!-- <legend id="detailscaption">Contact Details</legend> -->
-                <div class="form-row">
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" placeholder="John">
-                </div>
-                <div class="form-row">
-                    <label for="surname">Surname:</label>
-                    <input type="text" id="surname" name="surname" placeholder="Smith">
-                </div>
-                <div class="form-row">
-                    <label for="email">Email: </label>
-                    <input type="email" id="email" name="email" placeholder="johnsmith@example.com">
-                </div>
-                </fieldset>
-                <fieldset>
-                    <!-- <legend id="passwordcaption">Password</legend> -->
-                <div class="form-row">
-                    <label for="password">Password: </label>
-                    <input type="password" id="password" name="password">
-                </div>
-                <div class="form-row">
-                    <label for="reenter">Re-enter your password: </label>
-                    <input type="password" id="reenter" name="reenter">
-                </div>
-                </fieldset>
-                    <button type="submit">Sign Up</button>
-                    <button type="reset">Reset</button>
-
-            </form>
+        <div id="page2">
+            <!-- <img id="form-img" src="./imgs/frozen-lake.jpeg"> -->
+            <div id="page2-rightside">
+                <div>Looking to adopt a glacier?</div>
+                <form method="post" action="[example]">
+                    <fieldset>
+                        <!-- <legend id="detailscaption">Contact Details</legend> -->
+                        <div class="form-row">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="John">
+                        </div>
+                        <div class="form-row">
+                            <label for="surname">Surname:</label>
+                            <input type="text" id="surname" name="surname" placeholder="Smith">
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email: </label>
+                            <input type="email" id="email" name="email" placeholder="johnsmith@example.com">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <!-- <legend id="passwordcaption">Password</legend> -->
+                        <div class="form-row">
+                            <label for="username">Username: </label>
+                            <input type="text" id="username" name="username">
+                        </div>
+                        <div class="form-row">
+                            <label for="password">Password: </label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div class="form-row">
+                            <label for="reenter">Re-enter your password: </label>
+                            <input type="password" id="reenter" name="reenter">
+                        </div>
+                    </fieldset>
+                    <!-- <button type="submit">Sign Up</button>
+                    <button type="reset">Reset</button> -->
+                </form>
+                <div class="page2-text">Already logged in? Click <span class="page2-fancytext">here.</span></div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>

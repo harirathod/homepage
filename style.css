@@ -12,17 +12,19 @@
   font-stretch: normal;
 }
 
-* {
-  border: 0px solid red;
-  padding: 0;
-  margin: 0;
-}
-
 #bkgrd-img {
   position: fixed;
   width: 2000px;
   top: -400px;
   left: -20px;
+  z-index: -1;
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.448);
   z-index: -1;
 }
 
@@ -32,15 +34,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 #title {
   font-family: "capitol", sans-serif;
-  font-weight: 600;
-  font-size: 60vmin;
-  line-height: 70vmin;
-  margin-top: 100px;
-  margin-bottom: -40px;
+  font-size: 30vw;
+  line-height: 35vw;
   text-align: center;
   background-image: linear-gradient(135deg, #92f4e3, #0420a9);
   -webkit-background-clip: text;
@@ -51,33 +51,85 @@
 
 img.down-arrow {
   width: 36px;
-  background-color: #000000f7;
+  background-color: #0000008f;
   border-radius: 100px;
   padding: 10px;
 }
 
-#title + button {
-    cursor: pointer;
-    background: none;
-    border-radius: 100px;
-    
+button {
+  cursor: pointer;
+  background: none;
+  border-radius: 100px;
 }
 
-.form-container {
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.721);
-    color: azure;
+#page2-rightside {
+  padding: 16px;
+  box-sizing: border-box;
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  color: azure;
+  position: static;
+}
+
+form > button {
+  border-radius: 15px;
+  color: white;
+  padding: 6px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 84px;
+  justify-content: space-evenly;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .form-row {
-    box-sizing: border-box;
-    padding: 4px;
+  width: min-content;
+  box-sizing: border-box;
+  padding: 4px;
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  flex-direction: column;
 }
 
 .form-row label {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border-radius: 3px;
+  margin-bottom: 10ps;
 }
 
+.form-row input {
+  padding: 3px;
+  border-radius: 5px;
+  background-color: #cefde8;
+}
 
+* {
+  border: 0px solid red;
+  padding: 0;
+  margin: 0;
+}
 
+#page2 {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: flex-end;
+}
 
+#page2-rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
