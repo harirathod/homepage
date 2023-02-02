@@ -12,4 +12,7 @@ An aesthetic registration page for a theoretical company called 'Glacier'.
 - HTML5
 
 ## View Compatibility 
-* Compatible with mobile portrait, mobile landscape, and desktop views.
+- Compatible with mobile portrait, mobile landscape, and desktop views.
+
+## Project Status
+- Project is actively under development.
