@@ -1,7 +1,13 @@
-# Sign-up form 📋
+# Registration Page 📋
 ## Overview
-An aesthetic sign-up page for a theoretical company called '**Glacier**'. Check out my page here **https://harirathod.github.io/sign-up-form/**!
+An registration page for a theoretical company called 'Glacier'. 
 
-Developed using HTML and CSS.
+## Live Demo
+Check out my website here https://harirathod.github.io/sign-up-form/**!
 
-###### Currently under development.
+## Technologies Used
+- Vanilla JavaScript
+- CSS3
+- HTML5
+
+
