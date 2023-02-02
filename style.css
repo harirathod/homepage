@@ -74,6 +74,12 @@ img.down-arrow {
   background: none;
 }
 
+.blank {
+  background-color: rgb(186, 240, 255);
+  width: 100vw;
+  height: 20vw;
+}
+
 .submit-btn:hover {
   color: rgb(228, 0, 76);
 }
@@ -165,12 +171,11 @@ fieldset {
   align-items: center;
   gap: 32px;
   padding: 32px;
-}
-
-#page2-bkgrd {
   background-color: black;
   color: azure;
 }
+
+
 
 .text {
   font-family: "poppins", sans-serif;
