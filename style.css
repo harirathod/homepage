@@ -18,29 +18,19 @@
   margin: 0px;
 }
 
-#bkgrd-img {
-  position: fixed;
-  width: 2000px;
-  top: -400px;
-  left: -20px;
-  z-index: -1;
-}
 
-.overlay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.448);
-  z-index: -1;
-}
 
-#text-container {
+#page1 {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./imgs/glacier.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 #title {
@@ -88,12 +78,19 @@ img.down-arrow {
   color: rgb(228, 0, 76);
 }
 
+div#form-ctnr {
+  padding: 32px;
+  background-image: linear-gradient(235deg, #78fa92, #2cc2f4);
+  border-radius: 10px;
+
+}
+
 .form {
   display: flex;
   flex-wrap: wrap;
   gap: 5vw;
   justify-content: space-evenly;
-  border-radius: 5px;
+  
 }
 
 form {
@@ -103,12 +100,12 @@ form {
   justify-content: center;
   gap: 32px;
   padding: 16px;
-  background-image: linear-gradient(235deg, #78fa92, #2cc2f4);
+  background-color: black;
   border-radius: 10px;
   opacity: 0;
 }
 
-form > * {
+form > button, form > div {
   opacity: 0;
 }
 
@@ -118,7 +115,6 @@ form button {
     sans-serif;
   border-radius: 15px;
   color: rgb(255, 255, 255);
-
   padding: 10px;
   font-size: 24px;
   transition: 0.5s;
@@ -142,7 +138,6 @@ fieldset {
   padding: 4px;
   display: flex;
   justify-content: space-around;
-  gap: 8px;
   flex-direction: column;
 }
 
@@ -150,12 +145,15 @@ fieldset {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  color: rgba(227, 248, 254, 0.812);
+  font-size: 15px;
+  
 }
 
 .form-row input {
-  padding: 3px;
-  border-radius: 5px;
+  padding: 6px;
+  height: 24px;
   background-color: #e7faf1;
 }
 

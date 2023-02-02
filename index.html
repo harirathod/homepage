@@ -13,51 +13,56 @@
 
 <body>
     <div id="mainbody">
-        <img id="bkgrd-img" src="./imgs/glacier.jpeg">
-        <div id="text-container">
+        <div id="page1">
+            <div class="img img-first"></div>
             <div id="title" class="gradient-overlay">Glacier</div>
             <div class="overlay"></div>
-            <button class="down-arrow-ctnr" onClick="document.getElementById('page2').scrollIntoView({behavior: 'smooth'});"><img class="down-arrow" src="./imgs/down-arro2.svg"></button>
+            <button class="down-arrow-ctnr"
+                onClick="document.getElementById('page2').scrollIntoView({behavior: 'smooth'});"><img class="down-arrow"
+                    src="./imgs/down-arro2.svg"></button>
         </div>
         <div id="page2-bkgrd">
-        <div id="page2">
-            <div class="text text1">Before you can start using our <span class="gradient-overlay">awesome</span>
-                service, please register.</div>
-            <!-- <img id="form-img" src="./imgs/frozen-lake.jpeg"> -->
-            <form method="post" action="[example]">
-                <div class="form">
-                    <fieldset>
-                        <!-- <legend id="detailscaption">Contact Details</legend> -->
-                        <div class="form-row">
-                            <label for="full-name">Full Name:</label>
-                            <input type="text" id="full-name" name="full-name" placeholder="John Smith">
+            <div id="page2">
+                <div class="text text1">Before you can start using our <span class="gradient-overlay">awesome</span>
+                    service, please register.</div>
+                <!-- <img id="form-img" src="./imgs/frozen-lake.jpeg"> -->
+                <div id="form-ctnr">
+                    <form method="post" action="[example]">
+                        <div class="form">
+                            <fieldset>
+                                <!-- <legend id="detailscaption">Contact Details</legend> -->
+                                <div class="form-row">
+                                    <label for="full-name">Name:</label>
+                                    <input type="text" id="full-name" name="full-name" placeholder="John Smith">
+                                </div>
+                                <div class="form-row">
+                                    <label for="email">Email: </label>
+                                    <input type="email" id="email" name="email" placeholder="johnsmith@example.com">
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <!-- <legend id="passwordcaption">Password</legend> -->
+                                <div class="form-row">
+                                    <label for="username">Username: </label>
+                                    <input type="text" id="username" name="username">
+                                </div>
+                                <div class="form-row">
+                                    <label for="password">Password: </label>
+                                    <input type="password" id="password" name="password">
+                                </div>
+                                <div class="form-row">
+                                    <label for="reenter">Re-enter: </label>
+                                    <input type="password" id="reenter" name="reenter">
+                                </div>
+                            </fieldset>
                         </div>
-                        <div class="form-row">
-                            <label for="email">Email: </label>
-                            <input type="email" id="email" name="email" placeholder="johnsmith@example.com">
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <!-- <legend id="passwordcaption">Password</legend> -->
-                        <div class="form-row">
-                            <label for="username">Username: </label>
-                            <input type="text" id="username" name="username">
-                        </div>
-                        <div class="form-row">
-                            <label for="password">Password: </label>
-                            <input type="password" id="password" name="password">
-                        </div>
-                        <div class="form-row">
-                            <label for="reenter">Re-enter your password: </label>
-                            <input type="password" id="reenter" name="reenter">
-                        </div>
-                    </fieldset>
+                        <button class="submit-btn" type="submit" class="gradient-overlay2">Create Account</button>
+                    </form>
                 </div>
-                <button class="submit-btn" type="submit" class="gradient-overlay2">Create Account</button>
-            </form>
-            <div class="text text2">Already have an account? <span class="gradient-overlay">Log in here.</span></div>
+                <div class="text text2">Already have an account? <span class="gradient-overlay">Log in here.</span>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
 </body>

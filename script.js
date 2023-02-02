@@ -3,7 +3,6 @@ main();
 function main() {
     document.onload = loadPage1();
     loadPage2();
-
 }
 
 function load(identifier) {
@@ -21,11 +20,11 @@ function loadPage1() {
 function loadPage2() {
     load('.text1');
     load('.text2');
-    setTimeout(() => { 
-        const form = document.querySelector('form');
-        form.classList.add('stretch-in');
-        form.setAttribute('style', 'opacity: 1');
-        setTimeout(() => { load('form > *'); }, 2000);
+    setTimeout(() => {
+        const htmlform = document.querySelector('form');
+        htmlform.classList.add('stretch-in');
+        htmlform.setAttribute('style', 'opacity: 1');
+        setTimeout(() => { load('form button'); load('form div'); }, 2000);
     }, 3000);
 
 }
