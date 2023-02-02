@@ -1,4 +1,5 @@
-# Aesthetic Registration Page 📋
+# Registration Page 📋
+
 ## Overview
 An aesthetic registration page for a theoretical company called 'Glacier'. 
  
