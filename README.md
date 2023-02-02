@@ -1,6 +1,6 @@
-# Registration Page 📋
+# Aesthetic Registration Page 📋
 ## Overview
-An registration page for a theoretical company called 'Glacier'. 
+An aesthetic registration page for a theoretical company called 'Glacier'. 
  
 ## Live Demo
 - Click **[here](https://harirathod.github.io/sign-up-form/)** for the live demo.
@@ -12,5 +12,3 @@ An registration page for a theoretical company called 'Glacier'.
 
 ## View Compatibility 
 * Compatible with mobile portrait, mobile landscape, and desktop views.
-
-
