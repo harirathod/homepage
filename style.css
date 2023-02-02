@@ -51,6 +51,7 @@
   text-align: center;
   margin-top: 10vw;
   margin-top: 2vw;
+  opacity: 0;
 }
 
 .gradient-overlay {
@@ -62,7 +63,7 @@
 }
 
 .gradient-overlay2 {
-  background-image: linear-gradient(135deg, #fa78cc, #2cc2f4);
+  background-image: linear-gradient(135deg, #78b5fa, #2cc2f4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -74,12 +75,41 @@ img.down-arrow {
   background-color: #0000008f;
   border-radius: 100px;
   padding: 10px;
+  opacity: 0;
 }
 
 .down-arrow-ctnr {
   cursor: pointer;
   border-radius: 100px;
   background: none;
+}
+
+.submit-btn:hover {
+  color: rgb(228, 0, 76);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vw;
+  justify-content: space-evenly;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 16px;
+  background-image: linear-gradient(235deg, #78fa92, #2cc2f4);
+  border-radius: 10px;
+  opacity: 0;
+}
+
+form > * {
+  opacity: 0;
 }
 
 form button {
@@ -90,32 +120,14 @@ form button {
   color: rgb(255, 255, 255);
 
   padding: 10px;
-  padding-top: 16px;
   font-size: 24px;
   transition: 0.5s;
   background: none;
   cursor: pointer;
 }
 
-.submit-btn:hover {
-  color: palevioletred;
-}
-
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5vw;
-  justify-content: space-evenly;
-  background-color: rgba(0, 0, 0, 0.407);
-  border-radius: 5px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
+form input {
+  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.542);
 }
 
 fieldset {
@@ -155,7 +167,10 @@ fieldset {
   align-items: center;
   gap: 32px;
   padding: 32px;
-  background-color: rgb(0, 0, 0);
+}
+
+#page2-bkgrd {
+  background-color: black;
   color: azure;
 }
 
@@ -163,6 +178,10 @@ fieldset {
   font-family: "poppins", sans-serif;
   font-weight: 400;
   font-size: 24px;
+}
+
+.text1, .text2 {
+  opacity: 0;
 }
 
 .text1 {
@@ -174,3 +193,33 @@ fieldset {
   margin-bottom: 20px;
   font-size: 16px;
 }
+
+.opacity-load-in {
+  animation-duration: 2.5s;
+  animation-name: opacityLoad;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes opacityLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes stretch-in {
+  0% {
+    transform: scale(0, .05);
+  }
+  50% {
+    transform: scale(1, .05);
+  }
+}
+
+.stretch-in {
+  animation: stretch-in 2s 1;
+}
+
+
