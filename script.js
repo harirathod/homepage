@@ -2,8 +2,9 @@ main();
 
 function main() {
     document.onload = loadTitlePage();
-    loadFormPage();
+    document.onload = loadFormPage();
 }
+
 
 function load(identifier) {
     const element = document.querySelector(identifier);
@@ -28,6 +29,7 @@ function setFullOpacity(element) {
 function loadTitlePage() {
     load('#title');
     setTimeout(() => { load('.down-arrow'); }, 2000);
+    addDateToTitlePage();
 }
 
 
@@ -69,3 +71,11 @@ downArrow.addEventListener('click', (e) => {
     resetFormPage();
     loadFormPage();
 })
+
+function addDateToTitlePage() {
+    const date = document.createElement('div');
+    date.textContent= '2023';
+    date.classList.add('title-page-date')
+    const titlePage = document.querySelector('#titlepage');
+    titlePage.insertBefore(date, titlePage.childNodes[0]);
+}
