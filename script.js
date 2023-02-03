@@ -1,31 +1,71 @@
 main();
 
 function main() {
-    document.onload = loadPage1();
-    loadPage2();
+    document.onload = loadTitlePage();
+    loadFormPage();
 }
 
 function load(identifier) {
     const element = document.querySelector(identifier);
     element.classList.add('opacity-load-in');
+    setFullOpacity(element);
+}
+
+function stretchIn(identifier) {
+    const element = document.querySelector(identifier)
+    element.classList.add('stretch-in');
+    setFullOpacity(element);
+}
+
+function setNoOpacity(element) {
+    element.setAttribute('style', 'opacity: 0');
+}
+
+function setFullOpacity(element) {
     element.setAttribute('style', 'opacity: 1');
 }
 
-function loadPage1() {
+function loadTitlePage() {
     load('#title');
     setTimeout(() => { load('.down-arrow'); }, 2000);
 }
 
 
-function loadPage2() {
-    load('.text1');
-    load('.text2');
+function loadFormPage() {
     setTimeout(() => {
-        const htmlform = document.querySelector('form');
-        htmlform.classList.add('stretch-in');
-        htmlform.setAttribute('style', 'opacity: 1');
-        setTimeout(() => { load('form button'); load('form div'); }, 2000);
-    }, 3000);
-
+        load('.text1');
+        load('.text2');
+    }, 200);
+    setTimeout(() => {
+        stretchIn('div#form-ctnr');
+        setTimeout(() => {
+            stretchIn('form');
+            setTimeout(() => { 
+                load('form button'); 
+                load('form > div'); 
+            }, 2000);
+        }, 2000);
+    }, 2500);
 }
 
+function resetFormPage() {
+
+    const text1 = document.querySelector('.text1');
+    const text2 = document.querySelector('.text2');
+    const formCtnr = document.querySelector('div#form-ctnr');
+    const form = document.querySelector('form');
+    const formBtn = document.querySelector('form button');
+    const formDiv = document.querySelector('form > div');
+    const formElements = [text1, text2, formCtnr, form, formBtn, formDiv];
+    formElements.forEach(element => {
+        setNoOpacity(element);
+        if(element.classList.contains('stretch-in')) element.classList.remove('stretch-in');
+        if(element.classList.contains('opacity-load-in')) element.classList.remove('opacity-load-in');
+    });
+}
+
+const downArrow = document.querySelector('.down-arrow-ctnr');
+downArrow.addEventListener('click', (e) => {
+    resetFormPage();
+    loadFormPage();
+})

@@ -28,21 +28,19 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0,0,0,0.15)), url(./imgs/glacier-cmprssd.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (hover: none) {
   #page1 {
-    background-image: ;
+    background-attachment: scroll;
   }
 }
-
-
 
 #title {
   font-family: "capitol", sans-serif;
   font-size: 30vw;
   line-height: 35vw;
-
   text-align: center;
   margin-top: 10vw;
   margin-top: 2vw;
@@ -90,11 +88,21 @@ img.down-arrow {
 }
 
 #page3 {
-  min-height: 1000px;
+  background: none;
+  min-height: 2000px;
+}
+div {
+ background: none;
 }
 
-.img.img-second {
 
+.img-second {
+  min-width: 100vw;
+  max-height: 100vh;
+  position: fixed;
+  left: 50%;
+  margin-left: -60%;
+  z-index: -1;
 }
 
 #page2 {
@@ -105,14 +113,16 @@ img.down-arrow {
   align-items: center;
   gap: 32px;
   padding: 32px;
-  background-color: black;
-  color: azure;
+  background-color: rgb(252, 252, 252);
+  color: rgb(2, 2, 2);
 }
 
 div#form-ctnr {
-  padding: 32px;
+  padding: 40px;
   background-image: linear-gradient(235deg, #78fa92, #2cc2f4);
   border-radius: 10px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+  opacity: 0;
 }
 
 .form {
@@ -132,6 +142,7 @@ form {
   background-color: black;
   border-radius: 10px;
   opacity: 0;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.655);
 }
 
 form > button,
@@ -140,9 +151,8 @@ form > div {
 }
 
 form button {
-  font-family: "poppins", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
   border-radius: 15px;
   color: rgb(255, 255, 255);
   padding: 10px;
@@ -176,14 +186,14 @@ fieldset {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border-radius: 3px;
   margin-bottom: 4px;
-  color: rgba(227, 248, 254, 0.812);
+  color: rgba(230, 230, 230, 0.812);
   font-size: 15px;
 }
 
 .form-row input {
   padding: 6px;
   height: 24px;
-  background-color: #e7faf1;
+  background-color: #aaaaaa;
 }
 
 .submit-btn:hover {
@@ -191,8 +201,8 @@ fieldset {
 }
 
 .text {
-  font-family: "poppins", sans-serif;
-  font-weight: 400;
+  font-family:  'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 500;
   font-size: 24px;
 }
 
@@ -228,10 +238,10 @@ fieldset {
 
 @keyframes stretch-in {
   0% {
-    transform: scale(0, 0.05);
+    transform: scale(0, 0.02);
   }
   50% {
-    transform: scale(1, 0.05);
+    transform: scale(1, 0.02);
   }
 }
 
