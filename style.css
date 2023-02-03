@@ -25,16 +25,18 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./imgs/glacier-cmprssd.jpeg);
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0,0,0,0.15)), url(./imgs/glacier-cmprssd.jpeg);
   background-repeat: no-repeat;
+  background-size: cover;
 }
+
+@media (hover: none) {
+  #page1 {
+    background-image: ;
+  }
+}
+
+
 
 #title {
   font-family: "capitol", sans-serif;
@@ -89,15 +91,10 @@ img.down-arrow {
 
 #page3 {
   min-height: 1000px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    url(./imgs/rock-in-valley-lrg.jpg);
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+}
+
+.img.img-second {
+
 }
 
 #page2 {
