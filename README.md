@@ -1,7 +1,7 @@
 # Registration Page 📋
 
 ## Overview
-An aesthetic registration page for a theoretical company called 'Glacier'. 
+An aesthetic homepage for an imaginary company called 'Glacier'.
  
 ## Live Demo
 - Click **[here](https://harirathod.github.io/sign-up-form/)** for the live demo.
@@ -12,7 +12,8 @@ An aesthetic registration page for a theoretical company called 'Glacier'.
 - HTML5
 
 ## View Compatibility 
-- Compatible with mobile portrait, mobile landscape, and desktop views.
+- Compatible with both desktop and mobile users.
+- The parallax effect is not compatible with iOS mobile users. Please use a desktop device for the greatest experience 😄.
 
 ## Project Status
 - Project is actively under development.
