@@ -81,7 +81,7 @@ function addDateToTitlePage() {
 }
 
 
-function createMiddlePage() {
+/*function createMiddlePage() {
     const page = document.querySelector('#page3');
     const t1 = document.createElement('div');
     t1.innerHTML = 
@@ -100,4 +100,4 @@ function createMiddlePage() {
         </div>
     </div>;
     
-}
+}*/
