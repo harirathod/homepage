@@ -40,8 +40,8 @@
   align-items: center;
   justify-content: space-evenly;
   box-sizing: border-box;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.44), rgba(0, 0, 0, 0.15)),
-    url(./imgs/glacier-cmprssd.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.15)),
+    url(./imgs/glacier.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -126,20 +126,20 @@ img.down-arrow {
 }
 
 #page3 {
-  background: none;
-  min-height: 2000px;
-}
-div {
-  background: none;
+  height: 5000px;
 }
 
 .img-second {
-  min-width: 100vw;
-  max-height: 100vh;
-  position: fixed;
-  left: 50%;
-  margin-left: -60%;
-  z-index: -1;
+  position: sticky;
+  position: -webkit-sticky;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  z-index: -3;
+}
+
+@media screen {
+  
 }
 
 #page2 {
