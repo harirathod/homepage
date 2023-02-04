@@ -79,3 +79,25 @@ function addDateToTitlePage() {
     const titlePage = document.querySelector('#titlepage');
     titlePage.insertBefore(date, titlePage.childNodes[0]);
 }
+
+
+function createMiddlePage() {
+    const page = document.querySelector('#page3');
+    const t1 = document.createElement('div');
+    t1.innerHTML = 
+    <div>
+    <div>
+        You're might be thinking, 
+    </div>
+        <div>
+            what on <em>earth</em> is Glacier?
+        </div>
+        <div>
+            
+        </div>
+        <div>
+
+        </div>
+    </div>;
+    
+}
