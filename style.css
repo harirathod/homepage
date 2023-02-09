@@ -13,9 +13,8 @@
 }
 
 @font-face {
-  font-family: 'poir';
+  font-family: "poir";
   src: url(./fonts/Poiret_One/PoiretOne-Regular.ttf) format("truetype");
-
 }
 
 @media (hover: none) {
@@ -34,6 +33,15 @@
   display: none;
 }
 
+#titlepage > img {
+  width: 2000px;
+  position: fixed;
+  left: -40px;
+  top: -350px;
+  z-index: -2;
+  filter: brightness(70%);
+}
+
 #titlepage {
   height: 100vh;
   display: flex;
@@ -43,11 +51,11 @@
   align-items: center;
   justify-content: space-evenly;
   box-sizing: border-box;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.15)),
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.219), rgba(0, 0, 0, 0.15)),
     url(./imgs/glacier.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
 }
 
 #title-ctnr {
@@ -162,7 +170,6 @@ div#form-ctnr {
   min-width: 40%;
 }
 
-
 .form {
   display: flex;
   flex-wrap: wrap;
@@ -234,7 +241,7 @@ fieldset {
 }
 
 .form-row input {
-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 6px;
   width: 184px;
   height: 32px;
