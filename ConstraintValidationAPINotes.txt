@@ -1,0 +1,20 @@
+- Consists of methods on some HTML<name>Element DOM interfaces
+- validationMessage: Returns msg describing validation constraints not satisfied
+- validity: returns validity state object.
+    - validityState objects has properties inc.:
+        patternMismatch
+        tooLong
+        tooshort
+        rangeOverflow
+        rangeUnderflow
+        typeMismatch
+        valid
+        valueMissing
+- willValidate returns true if element will be validated when the form is submitted.
+
+
+- methods
+    - checkValidity() checks if any validity problems
+    - reportValidity() reports invalid field
+    - setCustomValidity(message)
+    

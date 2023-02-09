@@ -99,5 +99,16 @@ function addDateToTitlePage() {
 
         </div>
     </div>;
-    
 }*/
+
+// form validation using Constraint Validation API
+const email = document.getElementById('email');
+
+email.addEventListener("input", (e) => {
+    if (email.validity.typeMismatch) {
+        email.setCustomValidity("I am expecting an email address!");
+    }
+    else {
+        email.setCustomValidity("");
+    }
+})
