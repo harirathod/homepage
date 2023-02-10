@@ -38,7 +38,7 @@
   position: fixed;
   left: -40px;
   top: -350px;
-  z-index: -2;
+  z-index: -3;
   filter: brightness(70%);
 }
 
