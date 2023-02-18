@@ -112,3 +112,13 @@ email.addEventListener("input", (e) => {
         email.setCustomValidity("");
     }
 })
+
+const password = document.getElementById('password');
+password.addEventListener("input", (e) => {
+    if(!password.validity.valueMissing && password.validity.tooShort) {
+        password.classList.add("invalid-password");
+    }
+    else if(password.validity.valueMissing) {
+        password.classList.remove("invalid-password");
+    }
+})
