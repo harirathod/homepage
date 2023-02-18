@@ -108,6 +108,9 @@ const fullName = document.getElementById('full-name');
 const fullNameRegExp = /^[a-zA-Z'-]+$/;
 const fullNameError = document.querySelector('#full-name + span.error');
 
+const username = document.getElementById('username');
+const usernameError = document.querySelector('#username + span.error');
+
 const email = document.getElementById('email');
 const emailError = document.querySelector('#email + span.error');
 
@@ -122,6 +125,10 @@ form.addEventListener("submit", (e) => {
         showFullNameError();
         e.preventDefault();
     }
+    if(!checkUsernameValidity(username)) {
+        showUsernameError();
+        e.preventDefault;
+    }
     if(!email.validity.valid) {
         showEmailError();
         e.preventDefault();
@@ -130,7 +137,6 @@ form.addEventListener("submit", (e) => {
         showPasswordError();
         e.preventDefault();
     }
-
     if(!checkReenterValidity(password, reenter)) {
         showReenterError();
         e.preventDefault();
@@ -151,18 +157,24 @@ fullName.addEventListener("input", () => {
     }
 })
 
-function showFullNameError() {
-    fullName.classList.add('top-rounded');
-    if(/\d/.test(fullName.value)) {
-        fullNameError.textContent = "Please do not enter any decimal numbers.";
+username.addEventListener("input", () => {
+    if(checkUsernameValidity(username)) {
+        username.classList.add('valid');
+        username.classList.remove('invalid', 'top-rounded');
+
+        usernameError.textContent = "";
+        usernameError.className = "error";
     }
     else {
-        fullNameError.textContent = "Please enter your full name.";
+        username.classList.remove('valid');
+        username.classList.add('invalid');
+        showUsernameError();
     }
-    fullNameError.className = "error active";
-}
 
-
+    if(username.validity.valueMissing) {
+        username.classList.remove('valid', 'invalid');
+    }
+})
 
 email.addEventListener("input", (e) => {
     if(email.validity.valid) {
@@ -170,15 +182,14 @@ email.addEventListener("input", (e) => {
         email.classList.remove('invalid', 'top-rounded');
 
         emailError.textContent = "";
-        emailError.className = 'error';
+        emailError.className = "error";
     }
     else {
-        email.classList.remove('valid');
+        email.classList.remove("valid");
         email.classList.add('invalid');
         showEmailError();
     }
 })
-
 
 password.addEventListener("input", (e) => {
     if(password.validity.valid) {
@@ -218,6 +229,22 @@ reenter.addEventListener("input", (e) => {
     }
 })  
 
+function showFullNameError() {
+    fullName.classList.add('top-rounded');
+    if(/\d/.test(fullName.value)) {
+        fullNameError.textContent = "Please do not enter any decimal numbers.";
+    }
+    else {
+        fullNameError.textContent = "Please enter your full name.";
+    }
+    fullNameError.className = "error active";
+}
+
+function showUsernameError() {
+    username.classList.add('top-rounded');
+    usernameError.textContent = "Please enter a username.";
+    usernameError.className = "error active";
+}
 
 function showEmailError() {
     email.classList.add('top-rounded');
@@ -251,3 +278,11 @@ function checkReenterValidity(a, b) {
     return false;
 }
 
+function checkUsernameValidity(c) {
+    // if username already taken, return false; 
+    // to be extended in future...
+    if(!c.validity.valueMissing) {
+        return true;
+    }
+    return false;
+}
