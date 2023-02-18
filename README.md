@@ -8,6 +8,7 @@ An aesthetic homepage for an imaginary company called 'Glacier'.
 
 ## Technologies Used
 - Vanilla JavaScript
+	- Constraint Validation API
 - CSS3
 - HTML5
 
@@ -16,4 +17,4 @@ An aesthetic homepage for an imaginary company called 'Glacier'.
 - The parallax effect is not compatible with iOS mobile users. Please use a desktop device for the greatest experience 😄.
 
 ## Project Status
-- Project is actively under development.
+- Project is **completed**.
