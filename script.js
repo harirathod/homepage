@@ -104,18 +104,29 @@ function addDateToTitlePage() {
 // form validation using Constraint Validation API
 const form = document.querySelector('form');
 
+const name = document.getElementById('')
+
 const email = document.getElementById('email');
 const emailError = document.querySelector('#email + span.error');
 
 const password = document.getElementById('password');
 const passwordError = document.querySelector('#password + span.error');
 
+const reenter = document.getElementById('reenter');
+const reenterError = document.querySelector('#reenter + span.error');
+
 form.addEventListener("submit", (e) => {
     if(!email.validity.valid) {
-        showError();
+        showEmailError();
         e.preventDefault();
     }
     if(!password.validity.valid) {
+        showPasswordError();
+        e.preventDefault();
+    }
+
+    if(!checkReenterValidity(password, reenter)) {
+        showReenterError();
         e.preventDefault();
     }
 })
@@ -128,30 +139,9 @@ email.addEventListener("input", (e) => {
         emailError.className = 'error';
     }
     else {
-        showError();
+        showEmailError();
     }
 })
-
-function showError() {
-    if(!email.validity.valid) {
-        email.classList.add('top-rounded');
-        emailError.textContent = "The entered value needs to be an email address."
-        emailError.className = "error active";
-    }
-
-    if(!password.validity.valueMissing && password.validity.tooShort) {
-        password.classList.add('top-rounded');
-        passwordError.textContent = `Your password must be at least ${password.minLength} characters.`;
-        passwordError.className = "error active";
-    }
-    else if(!password.validity.valid) {
-        password.classList.add('top-rounded');
-        passwordError.textContent = "Please enter a password.";
-        passwordError.className = "error active";
-    }
-}
-
-
 
 
 password.addEventListener("input", (e) => {
@@ -168,6 +158,55 @@ password.addEventListener("input", (e) => {
         passwordError.className = 'error';
     }
     else {
-        showError();
+        showPasswordError();
     }
 })
+
+reenter.addEventListener("input", (e) => {
+    if(checkReenterValidity(password, reenter)) {
+        reenter.classList.remove('top-rounded');
+        reenterError.textContent = "";
+        reenterError.className = 'error';
+    }
+    else {
+        showReenterError();
+    }
+})  
+
+
+function showEmailError() {
+    if(!email.validity.valid) {
+        email.classList.add('top-rounded');
+        emailError.textContent = "The entered value needs to be an email address."
+        emailError.className = "error active";
+    }
+}
+
+function showPasswordError() {
+    if(!password.validity.valueMissing && password.validity.tooShort) {
+        password.classList.add('top-rounded');
+        passwordError.textContent = `Your password must be at least ${password.minLength} characters.`;
+        passwordError.className = "error active";
+    }
+    else if(!password.validity.valid) {
+        password.classList.add('top-rounded');
+        passwordError.textContent = "Please enter a password.";
+        passwordError.className = "error active";
+    }
+}
+
+function showReenterError() {
+    if(!checkReenterValidity(password, reenter)) {
+        reenter.classList.add('top-rounded');
+        reenterError.textContent = "Please re-enter the same password, that you entered above.";
+        reenterError.className = "error active";
+    }
+}
+
+function checkReenterValidity(a, b) {
+    if(a.value === b.value) { 
+        return true;
+    }
+    return false;
+}
+
