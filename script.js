@@ -104,7 +104,9 @@ function addDateToTitlePage() {
 // form validation using Constraint Validation API
 const form = document.querySelector('form');
 
-const name = document.getElementById('')
+const fullName = document.getElementById('full-name');
+const fullNameRegExp = /^[a-zA-Z'-]+$/;
+const fullNameError = document.querySelector('#full-name + span.error');
 
 const email = document.getElementById('email');
 const emailError = document.querySelector('#email + span.error');
@@ -116,6 +118,10 @@ const reenter = document.getElementById('reenter');
 const reenterError = document.querySelector('#reenter + span.error');
 
 form.addEventListener("submit", (e) => {
+    if(!fullNameRegExp.test(fullName.value)) {
+        showFullNameError();
+        e.preventDefault();
+    }
     if(!email.validity.valid) {
         showEmailError();
         e.preventDefault();
@@ -131,55 +137,92 @@ form.addEventListener("submit", (e) => {
     }
 })
 
+fullName.addEventListener("input", () => {
+    if(fullNameRegExp.test(fullName.value)) {
+        fullName.classList.add('valid');
+        fullName.classList.remove('invalid', 'top-rounded');
+        fullNameError.textContent = "";
+        fullNameError.className = "error";
+    }
+    else {
+        fullName.classList.remove('valid');
+        fullName.classList.add('invalid');
+        showFullNameError();
+    }
+})
+
+function showFullNameError() {
+    fullName.classList.add('top-rounded');
+    if(/\d/.test(fullName.value)) {
+        fullNameError.textContent = "Please do not enter any decimal numbers.";
+    }
+    else {
+        fullNameError.textContent = "Please enter your full name.";
+    }
+    fullNameError.className = "error active";
+}
+
+
 
 email.addEventListener("input", (e) => {
     if(email.validity.valid) {
-        email.classList.remove('top-rounded');
+        email.classList.add('valid');
+        email.classList.remove('invalid', 'top-rounded');
+
         emailError.textContent = "";
         emailError.className = 'error';
     }
     else {
+        email.classList.remove('valid');
+        email.classList.add('invalid');
         showEmailError();
     }
 })
 
 
 password.addEventListener("input", (e) => {
-    if(!password.validity.valueMissing && password.validity.tooShort) {
-        password.classList.add("invalid-password");
-    }
-    else if(password.validity.valueMissing) {
-        password.classList.remove("invalid-password");
-    }
-
     if(password.validity.valid) {
-        password.classList.remove('top-rounded');
+        password.classList.add('valid');
+        password.classList.remove('invalid', 'top-rounded');
+
         passwordError.textContent = "";
         passwordError.className = 'error';
     }
     else {
+        password.classList.remove('valid');
+        password.classList.add("invalid");
         showPasswordError();
+    }
+
+    if(password.validity.valueMissing) {
+        password.classList.remove('valid', 'invalid');
     }
 })
 
 reenter.addEventListener("input", (e) => {
     if(checkReenterValidity(password, reenter)) {
-        reenter.classList.remove('top-rounded');
+        reenter.classList.add('valid');
+        reenter.classList.remove('invalid', 'top-rounded');
+
         reenterError.textContent = "";
         reenterError.className = 'error';
     }
     else {
+        reenter.classList.remove('valid');
+        reenter.classList.add('invalid');
         showReenterError();
+    }
+
+    if(reenter.validity.valueMissing) {
+        reenter.classList.remove('valid', 'invalid');
     }
 })  
 
 
 function showEmailError() {
-    if(!email.validity.valid) {
-        email.classList.add('top-rounded');
-        emailError.textContent = "The entered value needs to be an email address."
-        emailError.className = "error active";
-    }
+    email.classList.add('top-rounded');
+    emailError.textContent = "The entered value needs to be an email address."
+    emailError.className = "error active";
 }
 
 function showPasswordError() {
@@ -196,11 +239,9 @@ function showPasswordError() {
 }
 
 function showReenterError() {
-    if(!checkReenterValidity(password, reenter)) {
-        reenter.classList.add('top-rounded');
-        reenterError.textContent = "Please re-enter the same password, that you entered above.";
-        reenterError.className = "error active";
-    }
+    reenter.classList.add('top-rounded');
+    reenterError.textContent = "Please re-enter the same password, that you entered above.";
+    reenterError.className = "error active";
 }
 
 function checkReenterValidity(a, b) {
