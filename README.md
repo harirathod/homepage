@@ -1,5 +1,14 @@
 # Registration Page 📋
 
+## Contents
+- **[Overview](#overview)**
+- **[Live Demo](#live-demo)**
+- **[Techologies Used](#technologies-used)**
+- **[Purpose of Project](#purpose-of-project)**
+- **[Compatibility](#compatibility)**
+- **[Project Status](#project-status)**
+
+
 ## Overview
 An aesthetic homepage for an imaginary company called 'Glacier'.
  
@@ -8,13 +17,19 @@ An aesthetic homepage for an imaginary company called 'Glacier'.
 
 ## Technologies Used
 - Vanilla JavaScript
-	- Constraint Validation API
 - CSS3
 - HTML5
 
-## View Compatibility 
+## Purpose of Project
+The purpose was to continue practicing my skills in HTML, CSS, and JavaScript. 
+Through this project, I've learnt how to: 
+- Create **parallax effects** using fixed positioning;
+- Create aesthetic forms;
+- Use the **Constraint Validation API** to give more control over form validation and styling;
+- Use **CSS animations** to make the website more visually appealing
+
+## Compatibility 
 - Compatible with both desktop and mobile users.
-- The parallax effect is not compatible with iOS mobile users. Please use a desktop device for the greatest experience 😄.
 
 ## Project Status
-- Project is **completed**.
+- The project is **completed**.
