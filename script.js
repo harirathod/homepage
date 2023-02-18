@@ -79,31 +79,9 @@ function addDateToTitlePage() {
     const titlePage = document.querySelector('#titlepage');
     titlePage.insertBefore(date, titlePage.childNodes[0]);
 }
-
-
-/*function createMiddlePage() {
-    const page = document.querySelector('#page3');
-    const t1 = document.createElement('div');
-    t1.innerHTML = 
-    <div>
-    <div>
-        You're might be thinking, 
-    </div>
-        <div>
-            what on <em>earth</em> is Glacier?
-        </div>
-        <div>
-            
-        </div>
-        <div>
-
-        </div>
-    </div>;
-}*/
-
-// form validation using Constraint Validation API
 const form = document.querySelector('form');
 
+// get elements to be manipulated in the form
 const fullName = document.getElementById('full-name');
 const fullNameRegExp = /^[a-zA-Z'-]+$/;
 const fullNameError = document.querySelector('#full-name + span.error');
@@ -120,6 +98,8 @@ const passwordError = document.querySelector('#password + span.error');
 const reenter = document.getElementById('reenter');
 const reenterError = document.querySelector('#reenter + span.error');
 
+
+// validate form only if all inputs are validated
 form.addEventListener("submit", (e) => {
     if(!fullNameRegExp.test(fullName.value)) {
         showFullNameError();
@@ -143,6 +123,7 @@ form.addEventListener("submit", (e) => {
     }
 })
 
+// add validation and dynamic styling to input fields
 fullName.addEventListener("input", () => {
     if(fullNameRegExp.test(fullName.value)) {
         fullName.classList.add('valid');
@@ -229,6 +210,7 @@ reenter.addEventListener("input", (e) => {
     }
 })  
 
+// display errors as text under the input fields
 function showFullNameError() {
     fullName.classList.add('top-rounded');
     if(/\d/.test(fullName.value)) {
@@ -271,6 +253,7 @@ function showReenterError() {
     reenterError.className = "error active";
 }
 
+// check custom validity of fields
 function checkReenterValidity(a, b) {
     if(a.value === b.value) { 
         return true;
