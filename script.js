@@ -102,23 +102,72 @@ function addDateToTitlePage() {
 }*/
 
 // form validation using Constraint Validation API
-const email = document.getElementById('email');
+const form = document.querySelector('form');
 
-email.addEventListener("input", (e) => {
-    if (email.validity.typeMismatch) {
-        email.setCustomValidity("I am expecting an email address!");
+const email = document.getElementById('email');
+const emailError = document.querySelector('#email + span.error');
+
+const password = document.getElementById('password');
+const passwordError = document.querySelector('#password + span.error');
+
+form.addEventListener("submit", (e) => {
+    if(!email.validity.valid) {
+        showError();
+        e.preventDefault();
     }
-    else {
-        email.setCustomValidity("");
+    if(!password.validity.valid) {
+        e.preventDefault();
     }
 })
 
-const password = document.getElementById('password');
+
+email.addEventListener("input", (e) => {
+    if(email.validity.valid) {
+        email.classList.remove('top-rounded');
+        emailError.textContent = "";
+        emailError.className = 'error';
+    }
+    else {
+        showError();
+    }
+})
+
+function showError() {
+    if(!email.validity.valid) {
+        email.classList.add('top-rounded');
+        emailError.textContent = "The entered value needs to be an email address."
+        emailError.className = "error active";
+    }
+
+    if(!password.validity.valueMissing && password.validity.tooShort) {
+        password.classList.add('top-rounded');
+        passwordError.textContent = `Your password must be at least ${password.minLength} characters.`;
+        passwordError.className = "error active";
+    }
+    else if(!password.validity.valid) {
+        password.classList.add('top-rounded');
+        passwordError.textContent = "Please enter a password.";
+        passwordError.className = "error active";
+    }
+}
+
+
+
+
 password.addEventListener("input", (e) => {
     if(!password.validity.valueMissing && password.validity.tooShort) {
         password.classList.add("invalid-password");
     }
     else if(password.validity.valueMissing) {
         password.classList.remove("invalid-password");
+    }
+
+    if(password.validity.valid) {
+        password.classList.remove('top-rounded');
+        passwordError.textContent = "";
+        passwordError.className = 'error';
+    }
+    else {
+        showError();
     }
 })
