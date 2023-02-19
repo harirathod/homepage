@@ -10,7 +10,7 @@
 
 
 ## Overview
-An aesthetic homepage for an imaginary company called 'Glacier'.
+An aesthetic homepage with a sign-up form, for an imaginary company called 'Glacier'.
  
 ## Live Demo
 - Click **[here](https://harirathod.github.io/homepage/)** for the live demo.
@@ -27,6 +27,8 @@ Through this project, I've learnt how to:
 - Create aesthetic forms;
 - Use the **Constraint Validation API** to give more control over form validation and styling;
 - Use **CSS animations** to make the website more visually appealing
+
+###### This project was created as part of The Odin Project curriculum.
 
 ## Compatibility 
 - Compatible with both desktop and mobile users.
