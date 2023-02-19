@@ -13,7 +13,7 @@
 An aesthetic homepage for an imaginary company called 'Glacier'.
  
 ## Live Demo
-- Click **[here](https://harirathod.github.io/sign-up-form/)** for the live demo.
+- Click **[here](https://harirathod.github.io/homepage/)** for the live demo.
 
 ## Technologies Used
 - Vanilla JavaScript
